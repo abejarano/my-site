@@ -1,22 +1,7 @@
 <template>
   <v-app>
-    <v-container class="pt-0" style="z-index: 9">
-      <v-row>
-        <v-col cols="3" class=" pt-0">
-          <v-img :src="require('./assets/logo2.png')"  contain height="80" />
-        </v-col>
-        <v-spacer></v-spacer>
-
-        <v-row no-gutters>
-          <v-btn v-for="link in links" :key="link" text rounded class="my-2">
-            <router-link :to=link.url>{{link.title}}</router-link>
-          </v-btn>
-        </v-row>
-
-      </v-row>
-
-    </v-container>
-        <router-view></router-view>
+    <Navbar />
+    <router-view />
     <v-footer app>
       <!-- -->
     </v-footer>
@@ -26,11 +11,13 @@
 <script lang="ts">
   import Vue from 'vue';
   import HelloWorld from './components/HelloWorld.vue';
+  import Navbar from '@/components/Navbar.vue';
 
   export default Vue.extend({
     name: 'App',
     components: {
       HelloWorld,
+      Navbar,
     },
 
     data: () => ({
@@ -43,8 +30,10 @@
 </script>
 <style lang="scss">
   @font-face {font-family: nexalight; src: url(./assets/fonts/Nexa-Light.otf);}
+  @font-face {font-family: nexabold; src: url(./assets/fonts/Nexa-Bold.otf);}
   @font-face {font-family: ralewaybold; src: url(./assets/fonts/Raleway-Bold.ttf);}
   @font-face {font-family: ralewaymedium; src: url(./assets/fonts/Raleway-Medium.ttf);}
+
   * {
     font-family: "ralewaymedium";
     color: #525252;
@@ -61,5 +50,12 @@
   }
   .fontbluedark {
     color: #232a61;
+  }
+  .icon-decorator {
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    top: -1px;
+    left: -28px;
   }
   </style>
