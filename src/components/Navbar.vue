@@ -56,7 +56,8 @@
         text-decoration: none;
     }
     .v-btn__content > a {
-        color:#131416 !important;
+        //color:#131416 !important;
+        color: #2b2b2b !important;
         font-size: 10pt;
         font-family: "ralewaybold";
     }
