@@ -4,4 +4,13 @@ import Vuetify from 'vuetify/lib';
 Vue.use(Vuetify);
 
 export default new Vuetify({
+  theme: {
+    themes: {
+      light: {
+        primary: '#0087ff',
+        secondary: '#232a61',
+        anchor: '#ea9624',
+      },
+    },
+  },
 });
