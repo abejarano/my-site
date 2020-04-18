@@ -2,24 +2,21 @@
     <div id="header">
         <v-container class="pa-0">
             <v-row>
-                <v-col cols="3" class=" pa-0">
+                <v-col cols="3" class="pa-0">
                     <v-img :src="require('../assets/logo2.png')"  contain height="60" />
                 </v-col>
                 <v-spacer />
 
                 <v-row no-gutters class="justify-end align-content-center">
-                    <v-btn v-for="link in links" :key="link" text rounded class="my-2 ma-2">
+                    <v-btn v-for="link in links" :key="link.title" text rounded class="my-2 ma-2">
                         <router-link :to=link.url>{{link.title}}</router-link>
                     </v-btn>
-                    <!--<v-btn text rounded class="my-2">
-                        <v-icon>fab fa-facebook</v-icon>
-                    </v-btn>
-                    <v-btn text rounded class="my-2">
-                        <v-icon>fab fa-instagram</v-icon>
-                    </v-btn>
-                    <v-btn text rounded class="my-2">
-                        <v-icon>fab fa-linkedin</v-icon>
-                    </v-btn>-->
+                    <v-col cols="2">
+                        <v-combobox class="pt-1" chips small-chips persistent-hint
+                                v-model="lang" :items="languages" label
+                                @change="changeLocale(lang)"
+                        />
+                    </v-col>
                 </v-row>
             </v-row>
 
@@ -30,17 +27,33 @@
 
 <script lang="ts">
   import Vue from 'vue'
+  import i18n from '@/i18n';
 
   export default Vue.extend({
-    name: 'Navbar',
+    name: 'Header',
+    created: function () {
+      this.changeLocale(this.lang);
 
+    },
+    methods: {
+      changeLocale(locale: any) {
+        if (locale === "Portuguese") {
+          console.log(locale);
+          i18n.locale = "pt";
+        } else {
+          i18n.locale = "en";
+        }
+      }
+    },
     data: () => ({
+      lang: 'Portuguese',
       links: [
         {url: "/", title:'Home'},
         {url: "/about", title:'Experiência'},
         {url: "/about", title:'CV'},
         {url: "/about", title:'Contato'},
       ],
+      languages: ['English','Portuguese'],
     }),
   })
 </script>

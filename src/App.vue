@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Navbar />
+    <Header />
     <router-view />
     <v-footer app>
       <!-- -->
@@ -10,14 +10,12 @@
 
 <script lang="ts">
   import Vue from 'vue';
-  import HelloWorld from './components/HelloWorld.vue';
-  import Navbar from '@/components/Navbar.vue';
+  import Header from '@/components/Header.vue';
 
   export default Vue.extend({
     name: 'App',
     components: {
-      HelloWorld,
-      Navbar,
+      Header,
     },
 
     data: () => ({
@@ -25,6 +23,7 @@
         {url: "/", title:'Home'},
         {url: "/about", title:'Experiência'},
       ],
+
     }),
   });
 </script>
