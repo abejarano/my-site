@@ -9,7 +9,7 @@
 
                 <v-row no-gutters class="justify-end align-content-center">
                     <v-btn v-for="link in links" :key="link.title" text rounded class="my-2 ma-2">
-                        <router-link :to=link.url>{{link.title}}</router-link>
+                        <router-link :to=link.url>{{$t(link.title)}}</router-link>
                     </v-btn>
                     <v-col cols="2">
                         <v-combobox class="pt-1" chips small-chips persistent-hint
@@ -37,7 +37,7 @@
     },
     methods: {
       changeLocale(locale: any) {
-        if (locale === "Portuguese") {
+        if (locale === "Português") {
           console.log(locale);
           i18n.locale = "pt";
         } else {
@@ -46,14 +46,14 @@
       }
     },
     data: () => ({
-      lang: 'Portuguese',
+      lang: 'Português',
       links: [
-        {url: "/", title:'Home'},
-        {url: "/about", title:'Experiência'},
-        {url: "/about", title:'CV'},
-        {url: "/about", title:'Contato'},
+        {url: "/", title: 'menu.home'},
+        {url: "/about", title: 'menu.projects'},
+        {url: "/about", title: 'menu.cv'},
+        {url: "/about", title: 'menu.contact'},
       ],
-      languages: ['English','Portuguese'],
+      languages: ['English','Português'],
     }),
   })
 </script>

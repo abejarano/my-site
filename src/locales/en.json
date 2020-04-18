@@ -1,0 +1,14 @@
+{
+  "menu": {
+    "home": "Home",
+    "projects": "Projects",
+    "cv": "CV",
+    "contact": "Contact"
+  },
+  "presentation": {
+    "message1": "Developing ideas",
+    "message2": "Creating solutions",
+    "message3": "¿Web - Mobile?",
+    "message4": "Never stop learning by believing that the best is ahead, regardless of obstacles because success is guaranteed."
+  }
+}

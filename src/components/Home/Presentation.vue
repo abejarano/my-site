@@ -14,13 +14,13 @@
                     <div class = "icon-decorator">
                         <img :src="require('../../assets/Group169.png')"  contain height="74%" />
                     </div>
-                    <h1 class="ralewaybold fontbluedark">Desenvolvendo idéas</h1>
-                    <h1 class="nexalight fontblue">Criando soluções</h1>
-                    <h1 class="ralewaybold fontbluedark">¿Web - Mobile?</h1>
+                    <h1 class="ralewaybold fontbluedark">{{ $t('presentation.message1') }}</h1>
+                    <h1 class="nexalight fontblue">{{ $t('presentation.message2') }}</h1>
+                    <h1 class="ralewaybold fontbluedark">{{ $t('presentation.message3') }}</h1>
                     <p class="mt-4">
-                        Nunca pare de aprender acreditando que o melhor fica na frente, independentemente dos obstáculos porque o sucesso é garantido.
+                        {{ $t('presentation.message4') }}
                     </p>
-                    <v-btn class="pt-4 pb-7" small rounded color="primary">Saiba mais sobre mim</v-btn>
+                    <v-btn rounded color="primary">Saiba mais sobre mim</v-btn>
                 </v-col>
             </v-row>
 
@@ -28,14 +28,14 @@
     </v-container>
 </template>
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
+  import Vue from 'vue';
 
-  @Component({
+  export default Vue.extend({
     name: 'Presentation',
-  })
-  export default class Presentation extends Vue {
 
-  }
+    data: () => ({}),
+
+  })
 </script>
 
 <style lang="scss">

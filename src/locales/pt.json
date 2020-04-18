@@ -1,0 +1,14 @@
+{
+  "menu": {
+    "home": "Home",
+    "projects": "Projetos",
+    "cv": "CV",
+    "contact": "Contato"
+  },
+  "presentation": {
+    "message1": "Desenvolvendo idéas",
+    "message2": "Criando soluções",
+    "message3": "¿Web - Mobile?",
+    "message4": "Nunca pare de aprender acreditando que o melhor fica na frente, independentemente dos obstáculos porque o sucesso é garantido."
+  }
+}
