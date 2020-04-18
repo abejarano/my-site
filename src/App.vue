@@ -1,45 +1,29 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-container class="align-content-center pt-0" style="z-index: 9">
+      <v-row>
+        <v-col cols="4" class="pt-0">
+          <v-img :src="require('./assets/logo2.png')"  contain height="80" />
+        </v-col>
+        <v-spacer></v-spacer>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+        <v-row ustify="center" no-gutters>
+          <v-btn v-for="link in links" :key="link" text rounded class="my-2">
+            <router-link :to=link.url>{{link.title}}</router-link>
+          </v-btn>
 
-      <v-spacer></v-spacer>
+        </v-row>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+      </v-row>
 
-    <v-content>
-      <HelloWorld/>
-    </v-content>
+    </v-container>
+
+
+        <router-view></router-view>
+
+    <v-footer app>
+      <!-- -->
+    </v-footer>
   </v-app>
 </template>
 
@@ -55,7 +39,10 @@ export default Vue.extend({
   },
 
   data: () => ({
-    //
+    links: [
+      {url: "/", title:'Home'},
+      {url: "/about", title:'Experiência'},
+    ],
   }),
 });
 </script>
