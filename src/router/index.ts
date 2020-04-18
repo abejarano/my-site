@@ -9,6 +9,19 @@ const routes: RouteConfig[] = [
     path: '/',
     name: 'Home',
     component: Home,
+    meta: {
+      title: 'Angel Bejarano | Software Development',
+      metaTags: [
+        {
+          name: 'description',
+          content: 'The home page of our example app.'
+        },
+        {
+          property: 'og:description',
+          content: 'The home page of our example app.'
+        },
+      ],
+    },
   },
   {
     path: '/about',
@@ -23,4 +36,9 @@ const router = new VueRouter({
   routes,
 });
 
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  next()
+})
 export default router;
