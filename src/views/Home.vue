@@ -1,16 +1,15 @@
 <template>
-  <v-content>
   <div class="home">
     <Presentation/>
-    <br /><br /><br />
+    <br /><br />
     <AboutMe/>
   </div>
-  </v-content>
 </template>
 
 <script>
 import Presentation from '@/components/Home/Presentation.vue';
-import AboutMe from '@/components/Home/AboutMe';
+import AboutMe from '@/components/Home/AboutMe.vue';
+
 export default {
   name: 'Home',
   components: {

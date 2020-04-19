@@ -1,14 +1,8 @@
 <template>
-  <v-app>
-    <v-app-bar app style="background-color: transparent">
-      <Header />
-    </v-app-bar>
-
-    <router-view />
-    <v-footer app>
-      <!-- -->
-    </v-footer>
-  </v-app>
+  <div id="app">
+    <Header />
+    <router-view/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -24,15 +18,19 @@
   });
 </script>
 <style lang="scss">
+  @import 'node_modules/bootstrap/scss/bootstrap';
+  @import 'node_modules/bootstrap-vue/src/index.scss';
   @font-face {font-family: nexalight; src: url(./assets/fonts/Nexa-Light.otf);}
   @font-face {font-family: nexabold; src: url(./assets/fonts/Nexa-Bold.otf);}
   @font-face {font-family: ralewaybold; src: url(./assets/fonts/Raleway-Bold.ttf);}
   @font-face {font-family: ralewaymedium; src: url(./assets/fonts/Raleway-Medium.ttf);}
 
-  * {
-    font-family: "ralewaymedium";
+  html, body {
+    font-family: ralewaymedium;
     color: #525252;
+    font-size: 11pt;
   }
+
   .ralewaybold {
     font-family: "ralewaybold"; line-height: 1.3;
   }
@@ -46,11 +44,4 @@
   .fontbluedark {
     color: #232a61;
   }
-  .icon-decorator {
-    width: 40px;
-    height: 80px;
-    position: absolute;
-    top: -1px;
-    left: -28px;
-  }
-  </style>
+</style>
