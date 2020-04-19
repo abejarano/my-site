@@ -1,6 +1,5 @@
 <template>
-    <v-toolbar flat >
-
+    <v-toolbar flat class="header_transparent">
         <v-toolbar-title class="headline text-uppercase">
             <router-link to="/">
                 <v-img :src="require('../assets/logo2.png')"  contain height="60" />
@@ -8,11 +7,11 @@
         </v-toolbar-title>
         <v-spacer />
         <v-row no-gutters class="justify-end align-content-center">
-            <v-btn v-for="link in links" :key="link.title" text rounded class="my-2 ma-2">
+            <v-btn v-for="link in links" :key="link.title" text rounded class="my-3 ma-3">
                 <router-link :to=link.url>{{$t(link.title)}}</router-link>
             </v-btn>
             <v-col cols="2">
-                <v-combobox class="pt-1" chips small-chips persistent-hint
+                <v-combobox class="pt-3 ml-2" chips small-chips persistent-hint
                             v-model="lang" :items="languages" label
                             @change="changeLocale(lang)"
                 />
@@ -57,19 +56,18 @@
     .full-width {
         width: 100%;
     }
-    $white-transparent: rgb(255, 255, 255, 0.4) !important;
     .header_transparent {
-        background: $white-transparent !important;
+        background-color: transparent !important;
         z-index: 9;
     }
     button {
-        background: rgb(99, 180, 205, 0.4) !important;
+        background: rgb(234, 150, 36, 0.6) !important;
     }
     a {
         text-decoration: none;
     }
     .v-btn__content > a {
-        color: #2b2b2b !important;
+        color: white !important;
         font-size: 9pt;
         font-family: "ralewaybold";
     }
