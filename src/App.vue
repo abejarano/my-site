@@ -1,6 +1,9 @@
 <template>
   <v-app>
-    <Header />
+    <v-app-bar app>
+      <Header />
+    </v-app-bar>
+
     <router-view />
     <v-footer app>
       <!-- -->
@@ -17,14 +20,7 @@
     components: {
       Header,
     },
-
-    data: () => ({
-      links: [
-        {url: "/", title:'Home'},
-        {url: "/about", title:'Experiência'},
-      ],
-
-    }),
+    data: () => ({}),
   });
 </script>
 <style lang="scss">

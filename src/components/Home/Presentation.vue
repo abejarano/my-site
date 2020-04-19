@@ -35,7 +35,7 @@
 
     data: () => ({}),
 
-  })
+  });
 </script>
 
 <style lang="scss">
